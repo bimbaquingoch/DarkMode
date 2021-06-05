@@ -11,6 +11,8 @@
   --instagram-color1: #ffbb54;
   --instagram-color2: #5d66c5;
   --instagram-color3: #ef4bcf;
+  --cards-number: #000;
+  --body-background: #fff;
 }
 
 * {
@@ -22,8 +24,11 @@
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
+  background-color: var(--body-background);
 }
+
 .header {
+  color: var(--cards-number);
   background-color: var(--header-background);
   padding-top: 20px;
   padding-bottom: 50px;
@@ -106,6 +111,7 @@ body {
 }
 
 .card-followers-number {
+  color: var(--cards-number);
   font-size: 60px;
   font-weight: bold;
 }
@@ -130,6 +136,7 @@ body {
 /* overview */
 
 .overview-title {
+  color: var(--cards-number);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,6 +148,8 @@ body {
 .overview {
   margin-bottom: 20px;
 }
+
+/* cad-small */
 
 .card-small {
   background-color: var(--background-cards);
@@ -168,6 +177,7 @@ body {
 }
 
 .card-small-number {
+  color: var(--cards-number);
   font-size: 2.5em;
   font-weight: bold;
 }
@@ -218,7 +228,12 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: black;
+  :root {
+    --followers-cards: #96979c;
+    --background-cards: #252b43;
+    --header-background: #272d43;
+    --cards-number: #f9f9f9;
+    --body-background: #2d3556;
+    --social-user: #c2c2f2;
   }
 }
