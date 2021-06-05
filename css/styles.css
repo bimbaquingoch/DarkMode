@@ -5,14 +5,50 @@
   --social-user: #848487;
   --facebook: #0072ff;
   --facebook-shadown: #00a2f1;
+  --header-background: #f9f9f9;
+  --twitter-color: #00a2f1;
+  --github-color: #00040f;
+  --instagram-color1: #ffbb54;
+  --instagram-color2: #5d66c5;
+  --instagram-color3: #ef4bcf;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
 }
+.header {
+  background-color: var(--header-background);
+  padding-top: 20px;
+  padding-bottom: 50px;
+  border-radius: 0 0 15px 15px;
+}
+
+.all-cards {
+  margin-top: -30px;
+}
 
 .wrapper {
   margin: 0 20px;
+}
+
+.wrapper-total {
+  margin-top: 15px;
+  color: var(--social-user);
+  font-weight: bold;
+  border-bottom: 2px solid var(--social-user);
+  padding-bottom: 1.2em;
+}
+
+.grid {
+  display: grid;
+  grid-row-gap: 30px;
 }
 
 .card {
@@ -23,10 +59,11 @@ body {
   background-color: var(--background-cards);
   text-align: center;
   box-shadow: -2px 10px 15px var(--facebook-shadown);
+  transition: 500ms;
 }
 
 .card-socialMedia {
-  margin-top: 20px;
+  margin-top: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,13 +74,30 @@ body {
 
 .card-socialMedia img {
   margin-right: 10px;
-  width: 25px;
+  width: 32px;
 }
 
 .card:before {
   content: "";
-  height: 5px;
+  height: 10px;
+}
+
+.card.facebook:before {
   background-color: var(--facebook);
+}
+.card.twitter:before {
+  background-color: var(--facebook-shadown);
+}
+.card.github:before {
+  background-color: var(--github-color);
+}
+.card.instagram:before {
+  background-image: linear-gradient(
+    to right,
+    var(--instagram-color1) 0%,
+    var(--instagram-color3) 50%,
+    var(--instagram-color2) 100%
+  );
 }
 
 .card-followers {
@@ -71,4 +125,94 @@ body {
 }
 .plus-today img {
   width: 20px;
+}
+
+/* overview */
+
+.overview-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+.overview {
+  margin-bottom: 20px;
+}
+
+.card-small {
+  background-color: var(--background-cards);
+  box-shadow: -2px 10px 15px var(--facebook-shadown);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  transition: 500ms;
+}
+
+.card-small-title {
+  font-weight: bold;
+  color: var(--followers-cards);
+}
+
+.card-small-img {
+  text-align: end;
+}
+
+.card-small-img img {
+  width: 30px;
+}
+
+.card-small-number {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.card-small-percent {
+  text-align: end;
+  font-weight: bold;
+  color: var(--green-today);
+}
+
+@media screen and (min-width: 420px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+  }
+  .wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 25px;
+  }
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 35px;
+  }
+  .card-small:hover,
+  .card.facebook:hover,
+  .card.twitter:hover,
+  .card.instagram:hover,
+  .card.github:hover {
+    transform: scale(1.2);
+  }
+  .wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+  }
 }
