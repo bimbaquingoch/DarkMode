@@ -216,3 +216,9 @@ body {
     margin: 0 auto;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+  }
+}
