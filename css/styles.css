@@ -7,7 +7,7 @@
   --facebook-shadown: #00a2f1;
   --header-background: #f9f9f9;
   --twitter-color: #00a2f1;
-  --github-color: #00040f;
+  --github-color: #111521;
   --instagram-color1: #ffbb54;
   --instagram-color2: #5d66c5;
   --instagram-color3: #ef4bcf;
@@ -34,6 +34,56 @@ body {
   padding-bottom: 50px;
   border-radius: 0 0 15px 15px;
 }
+
+/* class dark-mode*/
+.dark-mode {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  justify-content: space-between;
+}
+
+.dark-mode p {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+/* switch */
+
+.switch {
+  display: block;
+  height: 35px;
+  background-color: var(--social-user);
+  border-radius: 20px;
+  padding: 5px;
+  width: 80px;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* checkbox */
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked ~ .switch::before {
+  transform: translateX(0);
+}
+
+.switch::before {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-color: var(--body-background);
+  border-radius: 50%;
+  transform: translateX(45px);
+  transition: 300ms;
+  will-change: transform;
+}
+/* cards */
 
 .all-cards {
   margin-top: -30px;
@@ -194,7 +244,7 @@ body {
     grid-column-gap: 25px;
   }
   .wrapper {
-    max-width: 400px;
+    max-width: 90%;
     margin: 0 auto;
   }
 }
@@ -202,17 +252,13 @@ body {
 @media screen and (min-width: 720px) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 25px;
-  }
-  .wrapper {
-    max-width: 700px;
-    margin: 0 auto;
   }
 }
 @media screen and (min-width: 1024px) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 35px;
+    grid-column-gap: 45px;
+    grid-row-gap: 45px;
   }
   .card-small:hover,
   .card.facebook:hover,
@@ -220,10 +266,6 @@ body {
   .card.instagram:hover,
   .card.github:hover {
     transform: scale(1.2);
-  }
-  .wrapper {
-    max-width: 90%;
-    margin: 0 auto;
   }
 }
 
