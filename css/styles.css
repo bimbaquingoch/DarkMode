@@ -14,6 +14,21 @@
   --cards-number: #000;
   --body-background: #fff;
 }
+.is-light-mode {
+  --background-cards: #f0f3fa;
+  --header-background: #f9f9f9;
+  --cards-number: #000;
+  --body-background: #fff;
+  --social-user: #848487;
+}
+
+.is-dark-mode {
+  --background-cards: #252b43;
+  --header-background: #272d43;
+  --cards-number: #f9f9f9;
+  --body-background: #2d3556;
+  --social-user: #c2c2f2;
+}
 
 * {
   margin: 0;
@@ -255,10 +270,20 @@ body {
   }
 }
 @media screen and (min-width: 1024px) {
+  /* dezplazar el darkmode */
+  .header-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+  .wrapper-total {
+    display: flex;
+    flex-direction: row;
+    border-bottom: none;
+  }
   .grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 45px;
-    grid-row-gap: 45px;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
   }
   .card-small:hover,
   .card.facebook:hover,
