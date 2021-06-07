@@ -14,21 +14,6 @@
   --cards-number: #000;
   --body-background: #fff;
 }
-.is-light-mode {
-  --background-cards: #f0f3fa;
-  --header-background: #f9f9f9;
-  --cards-number: #000;
-  --body-background: #fff;
-  --social-user: #848487;
-}
-
-.is-dark-mode {
-  --background-cards: #252b43;
-  --header-background: #272d43;
-  --cards-number: #f9f9f9;
-  --body-background: #2d3556;
-  --social-user: #c2c2f2;
-}
 
 * {
   margin: 0;
@@ -40,6 +25,23 @@ body {
   margin: 0;
   font-family: "Lato", sans-serif;
   background-color: var(--body-background);
+}
+
+.is-light-mode {
+  --background-cards: #f0f3fa;
+  --header-background: #f9f9f9;
+  --cards-number: #000;
+  --body-background: #fff;
+  --social-user: #848487;
+}
+
+.is-dark-mode {
+  --followers-cards: #9697f9;
+  --background-cards: #252b43;
+  --header-background: #272d43;
+  --cards-number: #f9f9f9;
+  --body-background: #2d3556;
+  --social-user: #c2c2f2;
 }
 
 .header {
@@ -56,6 +58,7 @@ body {
   flex-direction: row;
   padding-top: 20px;
   justify-content: space-between;
+  align-items: center;
 }
 
 .dark-mode p {
@@ -84,7 +87,7 @@ body {
 }
 
 .checkbox:checked ~ .switch::before {
-  transform: translateX(0);
+  transform: translateX(45px);
 }
 
 .switch::before {
@@ -94,7 +97,7 @@ body {
   height: 25px;
   background-color: var(--body-background);
   border-radius: 50%;
-  transform: translateX(45px);
+  transform: translateX(0);
   transition: 300ms;
   will-change: transform;
 }
@@ -185,6 +188,7 @@ body {
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--followers-cards);
+  font-weight: bold;
 }
 
 .plus-today {
